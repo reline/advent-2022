@@ -1,4 +1,4 @@
-def part1():
+def allCalories():
     file = open('./input/day1.txt')
     elves = file.readlines()
     file.close()
@@ -11,6 +11,15 @@ def part1():
             calories = 0
         else:
             calories += int(elf)
-    print(max(allCalories))
+    return allCalories
+
+def part1():
+    print(max(allCalories()))
+
+def part2():
+    calories = allCalories()
+    calories.sort()
+    print(calories[len(calories) - 1] + calories[len(calories) - 2] + calories[len(calories) - 3])
 
 part1()
+part2()
